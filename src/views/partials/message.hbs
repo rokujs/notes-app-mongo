@@ -1,0 +1,25 @@
+{{#if msg}}
+  <script>
+    function closeMessage() { const notification =
+    document.querySelector('.notification')
+    notification.parentNode.removeChild(notification) }
+  </script>
+  <div class="">
+    <div class="notification is-primary m-6">
+      <button class="delete" onclick="closeMessage()"></button>
+      <strong>{{msg}}</strong>
+    </div>
+{{/if}}
+
+{{#if error}}
+  <script>
+    function closeMessage() { const notification =
+    document.querySelector('.notification')
+    notification.parentNode.removeChild(notification) }
+  </script>
+  <div class="">
+    <div class="notification is-danger m-6">
+      <button class="delete" onclick="closeMessage()"></button>
+      <strong>{{error}}</strong>
+    </div>
+{{/if}}

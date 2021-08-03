@@ -1,0 +1,24 @@
+
+  <div class="column is-4 is-offset-4">
+    <div class="box">
+      <div class="bock m-4">
+        <h3 class="title is-3 has-text-centered">Edit Note</h3>
+      </div>
+      <div class="block">
+        <form action="/notes/edit/{{note._id}}?_method=PUT" method="post">
+        <input type="hidden" name="_method" value="PUT">
+          <div class="block">
+            <input class="input is-link" name="title" type="text" value="{{note.title}}" autofocus />
+          </div>
+          <div class="block">
+            <textarea
+              class="textarea is-link"
+              placeholder="Description..."
+              name="description"
+            >{{note.description}}</textarea>
+          </div>
+          <div class="block"><button class="button is-link is-fullwidth">save</button></div>
+        </form>
+      </div>
+    </div>
+  </div>
