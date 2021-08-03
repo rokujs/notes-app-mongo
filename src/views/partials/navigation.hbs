@@ -1,0 +1,66 @@
+<nav class="navbar is-warning" role="navigation" aria-label="main navigation">
+  <script>
+    function change() { const menu = document.querySelector('#menu-de')
+    menu.classList.toggle('is-active') }
+  </script>
+  <div class="container">
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="/">
+          Home
+        </a>
+
+        <a class="navbar-item" href="/about">
+          About
+        </a>
+      </div>
+
+      <div class="navbar-end">
+        {{#if user}}
+        <div class="navbar-item">
+          <div class="dropdown" id="menu-de">
+            <div class="dropdown-trigger">
+              <button
+                class="button"
+                aria-haspopup="true"
+                aria-controls="dropdown-menu3"
+                onclick="change()"
+              >
+                <span>Notes</span>
+                <span class="icon is-small">
+                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                </span>
+              </button>
+            </div>
+            <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+              <div class="dropdown-content">
+                <a href="/notes" class="dropdown-item">
+                  All notes
+                </a>
+                <a href="/notes/add" class="dropdown-item">
+                  Add a note
+                </a>
+                <hr class="dropdown-divider" />
+                <a href="/users/logout" class="dropdown-item">
+                  Log out
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{else}}
+        <div class="navbar-item">
+          <div class="buttons">
+            <a href="/users/signup" class="button is-primary">
+              <strong>Sign up</strong>
+            </a>
+            <a href="/users/signin" class="button is-light">
+              Log in
+            </a>
+          </div>
+        </div>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</nav>

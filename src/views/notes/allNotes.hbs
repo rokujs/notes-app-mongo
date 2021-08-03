@@ -1,0 +1,20 @@
+
+  {{#each notes}}
+    <div class="column is-one-quarter">
+      <div class="card">
+        <div class="card-content">
+          <p class="title is-flex is-justify-content-space-between">
+            {{title}}
+            <a href="/notes/edit/{{_id}}"><i class="far fa-edit"></i></a>
+          </p>
+        </div>
+        <div class="card-footer">
+          <p class="card-footer-item">{{description}}</p>
+        </div>
+        <form action="/notes/delete/{{_id}}?_method=DELETE" method="post">
+          <input type="hidden" name="_method" value="DELETE">
+          <button class="button is-danger is-fullwidth">delete</button>
+        </form>
+      </div>
+    </div>
+  {{/each}}
